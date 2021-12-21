@@ -1,2 +1,2 @@
-# hikayaats
+# Hikayaats
 Platform Edukasi Sejarah Islam
