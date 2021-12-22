@@ -1,5 +1,9 @@
 import 'package:hikayaats/model/submodule.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'module.g.dart';
+
+@JsonSerializable()
 class Module {
   final String name;
   final int numOfCourses;
@@ -13,4 +17,16 @@ class Module {
     required this.submodules,
   }
   );
+
+  factory Module.fromJson(Map<String, dynamic> json) =>
+      _$ModuleFromJson(json);
+
+  @override
+  fromJson(Map<String, dynamic> json) => _$ModuleFromJson(json);
+
+  @override
+  List<Object> get props => [];
+
+  @override
+  Map<String, dynamic> toJson() => _$ModuleToJson(this);
 }

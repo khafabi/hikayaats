@@ -2,11 +2,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hikayaats/model/flashcard.dart';
 import 'package:hikayaats/model/module.dart';
 import 'package:hikayaats/model/submodule.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'level.g.dart';
+
+@JsonSerializable()
 class Level {
-  static const NAME = "name";
-  static const IMAGE = "image";
-  static const MODULE = "module";
+  // static const NAME = "name";
+  // static const IMAGE = "image";
+  // static const MODULE = "module";
 
   String? name;
   int? numOfCourses;
@@ -20,12 +24,25 @@ class Level {
     this.modules,
   });
 
-  Level.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> snapshot) {
-    name = snapshot.data()![NAME];
-    image = snapshot.data()![IMAGE];
-    numOfCourses = 10;
-    modules = snapshot.data()![MODULE];
-  }
+  // Level.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> snapshot) {
+  //   name = snapshot.data()![NAME];
+  //   image = snapshot.data()![IMAGE];
+  //   numOfCourses = 10;
+  //   modules = snapshot.data()![MODULE];
+  // }
+
+  factory Level.fromJson(Map<String, dynamic> json) =>
+      _$LevelFromJson(json);
+
+  @override
+  fromJson(Map<String, dynamic> json) => _$LevelFromJson(json);
+
+  @override
+  List<Object> get props => [];
+
+  @override
+  Map<String, dynamic> toJson() => _$LevelToJson(this);
+
 }
 
 // List<Level> level = content

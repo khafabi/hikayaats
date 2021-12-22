@@ -1,5 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'user.g.dart';
+
+@JsonSerializable()
 class UserModel {
   static const ID = "id";
   static const NAME = "name";
@@ -20,4 +24,16 @@ class UserModel {
     email = snapshot.data()![EMAIL];
     id = snapshot.data()![ID];
   }
+
+  factory UserModel.fromJson(Map<String, dynamic> json) =>
+      _$UserModelFromJson(json);
+
+  @override
+  fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
+
+  @override
+  List<Object> get props => [];
+
+  @override
+  Map<String, dynamic> toJson() => _$UserModelToJson(this);
 }
