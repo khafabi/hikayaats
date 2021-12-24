@@ -1,6 +1,19 @@
 part of 'auth_cubit.dart';
 
 @immutable
-abstract class AuthcubitState {}
+abstract class AuthState{
+  const AuthState();
 
-class AuthcubitInitial extends AuthcubitState {}
+  @override
+  List<Object> get props => [];
+}
+
+class AuthInitial extends AuthState {}
+
+class AuthLoading extends AuthState {}
+
+class AuthSuccess extends AuthState {
+
+
+
+}

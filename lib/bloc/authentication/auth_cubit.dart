@@ -3,6 +3,8 @@ import 'package:meta/meta.dart';
 
 part 'auth_state.dart';
 
-class AuthcubitCubit extends Cubit<AuthcubitState> {
-  AuthcubitCubit() : super(AuthcubitInitial());
+class AuthCubit extends Cubit<AuthState> {
+  AuthCubit() : super(AuthInitial());
+  
+  
 }

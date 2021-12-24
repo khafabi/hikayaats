@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "628973097347",
+    "project_id": "sari-skripsi",
+    "storage_bucket": "sari-skripsi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628973097347:android:9cae290aa8b62b4446e6b6",
+        "android_client_info": {
+          "package_name": "com.tsolution.hikayaats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628973097347-9916urevedr96p814vp635dat307ij34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ9alWIu_SybkcUdZVfGsjJUL7gQ2b1u4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628973097347-9916urevedr96p814vp635dat307ij34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

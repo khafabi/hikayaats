@@ -8,7 +8,7 @@ class ContentController extends GetxController {
   String contentCollection = "content";
   late List<Rx<Level>> levels;
   // _initializeLevel(String name) async {
-  //   level.value = await firebaseFirestore
+  //   levels.value = await firebaseFirestore
   //       .collection(contentCollection)
   //       .doc(name)
   //       .get()
