@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:hikayaats/model/user.dart';
 import 'package:meta/meta.dart';
 
 part 'auth_state.dart';
