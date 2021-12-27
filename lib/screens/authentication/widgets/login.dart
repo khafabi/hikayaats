@@ -3,12 +3,18 @@ import 'package:hikayaats/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginWidget extends StatelessWidget {
-  const LoginWidget({Key? key}) : super(key: key);
+  LoginWidget({Key? key}) : super(key: key);
+
+  final _fullNameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _passwordConfirmationController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -25,7 +31,7 @@ class LoginWidget extends StatelessWidget {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width / 1.2,
-                margin: EdgeInsets.only(top: 30),
+                margin: const EdgeInsets.only(top: 30),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   color: Colors.grey.withOpacity(.3),
@@ -34,9 +40,9 @@ class LoginWidget extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
-                    controller: authController.email,
-                    decoration: InputDecoration(
-                        icon: Icon(Icons.email_outlined),
+                    controller: _emailController,
+                    decoration: const InputDecoration(
+                        icon: const Icon(Icons.email_outlined),
                         fillColor: Colors.white,
                         border: InputBorder.none,
                         hintText: "Email"),
@@ -50,7 +56,7 @@ class LoginWidget extends StatelessWidget {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width / 1.2,
-                margin: EdgeInsets.only(top: 30),
+                margin: const EdgeInsets.only(top: 30),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   color: Colors.grey.withOpacity(.3),
@@ -59,8 +65,8 @@ class LoginWidget extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
-                    controller: authController.password,
-                    decoration: InputDecoration(
+                    controller: _passwordController,
+                    decoration: const InputDecoration(
                         icon: Icon(Icons.lock),
                         fillColor: Colors.white,
                         border: InputBorder.none,

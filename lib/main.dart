@@ -1,3 +1,5 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hikayaats/bloc/authentication/auth_cubit.dart';
 import 'package:hikayaats/constants/firebase.dart';
 import 'package:hikayaats/controllers/appController.dart';
 import 'package:hikayaats/controllers/authController.dart';
@@ -23,22 +25,27 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // return GetMaterialApp(
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: "Nunito",
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context)=>AuthCubit()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          fontFamily: "Nunito",
+        ),
+        routes: {
+          '/': (context)=> Splash(),
+          '/authentication': (context)=> AuthenticationScreen(),
+          '/home': (context)=> HomeScreen(),
+        },
+        // getPages: [7
+        //   GetPage(name: '/', page: () => Splash()),
+        //   GetPage(name: '/authentication', page: () => AuthenticationScreen()),
+        //   GetPage(name: '/home', page: () => HomeScreen()),
+        // ],
       ),
-      routes: {
-        '/': (context)=> Splash(),
-        '/authentication': (context)=> AuthenticationScreen(),
-        '/home': (context)=> HomeScreen(),
-      },
-      // getPages: [
-      //   GetPage(name: '/', page: () => Splash()),
-      //   GetPage(name: '/authentication', page: () => AuthenticationScreen()),
-      //   GetPage(name: '/home', page: () => HomeScreen()),
-      // ],
     );
   }
 }
