@@ -14,12 +14,16 @@ class AuthService {
   }) async {
     try {
       /// Register to Authentication
-      UserCredential userCredential =
-          await _auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      UserCredential userCredential = await _auth
+          .createUserWithEmailAndPassword(
+            email: email,
+            password: password,
+          );
 
+      /// Send email confirmation
+      // userCredential.user!.sendEmailVerification();
+
+      /// Create Firestore
       UserModel user = UserModel(
         id: userCredential.user!.uid,
         name: name,

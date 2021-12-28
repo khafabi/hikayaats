@@ -4,7 +4,6 @@ import 'package:hikayaats/screens/constants.dart';
 import 'package:hikayaats/screens/platform/platform.dart';
 import 'package:hikayaats/screens/submodule/submodule.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ModuleScreen extends StatelessWidget {
   final Level level;
@@ -37,7 +36,6 @@ class ModuleScreen extends StatelessWidget {
                       IconButton(
                           icon: const Icon(Icons.arrow_back),
                           onPressed: () {
-                            Get.back();
                           }),
                     ],
                   ),
@@ -74,7 +72,6 @@ class ModuleScreen extends StatelessWidget {
                                 final Module module = level.modules![index];
                                 return InkWell(
                                   onTap: () {
-                                    Get.to(SubmoduleScreen(module: module));
                                   },
                                   child: CourseContent(
                                     number: (index + 1).toString(),

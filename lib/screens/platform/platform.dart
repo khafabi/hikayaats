@@ -1,7 +1,6 @@
 import 'package:hikayaats/model/submodule.dart';
 import 'package:hikayaats/screens/flashcard/flashcard_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 // import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
@@ -65,7 +64,7 @@ class PlatformScreen extends StatelessWidget {
                       style: TextStyle(fontSize: 16),
                     ),
                     onPressed: () {
-                      Get.to(Flashcard(summaries: submodule.summary));
+                      // Get.to(Flashcard(summaries: submodule.summary));
                     },
                   ))
             ],
